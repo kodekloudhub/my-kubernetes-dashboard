@@ -1,0 +1,69 @@
+<div class="container">
+
+    <div class="card-panel hoverable center-align main-card-panel" style="padding-top: 0px;">
+
+        <!--<h4> Connectivity Test </h4>-->
+
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="webapp-service" ng-model="host" id="first_name" type="text" class="validate">
+                  <label for="first_name">Host Name</label>
+                </div>
+                <div class="input-field col s6">
+
+                    <textarea id="textarea1" ng-model="token"  class="materialize-textarea"></textarea>
+                    <label for="textarea1">Token</label>
+
+                </div>
+              </div>
+
+               <button style="margin-right: 20px;" class="waves-effect waves-light btn" ng-class="{'disabled': is_loading}" ng-click="loadData()"> Load Dashboard
+                <i class="fa fa-refresh fa-spin fa-3x fa-fw" ng-show="is_loading"></i>
+               </button>
+
+
+                <table>
+                    <thead>
+                      <tr >
+                          <th>Name</th>
+                          <th>State</th>
+                          <th>Containers</th>
+                          <th>Service Account</th>
+                          <th>IP</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr ng-repeat="item in pods_data.items">
+                        <td>{{ item.metadata.name }}</td>
+                        <td>{{ item.status.phase }}</td>
+                        <td>{{ item.status.containerStatuses.length }}</td>
+                        <td>{{ item.spec.serviceAccountName }}</td>
+                        <td>{{ item.status.podIP }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                <ul class="fa-ul">
+                    <li style="text-align: left" ng-if="alert_message">
+                        <i class="fa-li fa fa-close" ng-if="alert_type==='failure'"></i>
+                        <i class="fa-li fa fa-check" ng-if="alert_type==='success'"></i>
+                      <!--<span class="title">Title</span>-->
+                        {{ alert_message }}
+
+                    </li>
+                </ul>
+
+            </form>
+
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function(){
+        M.updateTextFields();
+      });
+
+</script>

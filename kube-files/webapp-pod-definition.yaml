@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-conntest
+  labels:
+    name: webapp-conntest
+spec:
+  containers:
+  - name: webapp-conntest
+    image: kodekloud/webapp-conntest
+    ports:
+    - containerPort: 8080
