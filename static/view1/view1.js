@@ -19,15 +19,14 @@ angular.module('myApp.view1', ['ngRoute'])
      $scope.show_log = false;
      $scope.question_tests = [];
 
-     $scope.host = ""
-     $scope.port = ""
+     $scope.token = ""
 
      $scope.all_question_statuses = []
 
      $scope.loadData = function(){
         $scope.is_loading = true;
         $scope.pods_data = null;
-        $http.post("/test", {host: $scope.host, token: $scope.token}).then(function(response){
+        $http.post("/test", {token: $scope.token}).then(function(response){
             $scope.is_loading = false;
             $scope.alert_message = response.data.message;
             $scope.pods_data = response.data;
