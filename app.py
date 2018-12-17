@@ -23,7 +23,7 @@ def test():
 
     print("SA_TOKEN=" + str(SA_TOKEN))
 
-    test_results = requests.get('https://192.168.56.70:6443/api/v1/namespaces/default/pods', headers={'Authorization': 'Bearer ' + str(SA_TOKEN)},
+    test_results = requests.get('https://kubernetes.default.svc:6443/api/v1/namespaces/default/pods', headers={'Authorization': 'Bearer ' + str(SA_TOKEN)},
                                         verify=False)
 
     return (test_results.text, test_results.status_code, test_results.headers.items())
