@@ -1,12 +1,18 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: webapp-conntest
-  labels:
-    name: webapp-conntest
+  name: webapp-dashboard
 spec:
-  containers:
-  - name: webapp-conntest
-    image: kodekloud/webapp-conntest
-    ports:
-    - containerPort: 8080
+  selector:
+      matchLabels:
+        name: webapp-dashboard
+  template:
+    metadata:
+      labels:
+        name: webapp-dashboard
+    spec:
+      containers:
+      - name: webapp-dashboard
+        image: kodekloud/my-kubernetes-dashboard
+        ports:
+        - containerPort: 8080

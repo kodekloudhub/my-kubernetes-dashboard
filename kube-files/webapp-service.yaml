@@ -4,7 +4,7 @@ metadata:
   name: webapp-service
 spec:
   selector:
-    name: webapp-resource
+    name: webapp-dashboard
   type: NodePort
   ports:
   - port: 8080
