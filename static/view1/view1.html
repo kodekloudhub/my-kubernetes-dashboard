@@ -12,7 +12,7 @@
                 <!--</div>-->
                 <div class="input-field col s12">
 
-                    <textarea id="textarea1" ng-model="token"  class="materialize-textarea"></textarea>
+                    <textarea id="textarea1" ng-model="token"  class="materialize-textarea" style="color: white"></textarea>
                     <label for="textarea1">Token</label>
 
                 </div>
@@ -45,15 +45,19 @@
                     </tbody>
                   </table>
 
-                <ul class="fa-ul">
-                    <li style="text-align: left" ng-if="alert_message">
-                        <i class="fa-li fa fa-close" ng-if="alert_type==='failure'"></i>
-                        <i class="fa-li fa fa-check" ng-if="alert_type==='success'"></i>
-                      <!--<span class="title">Title</span>-->
-                        {{ alert_message }}
+                <h4 style="color: #f44336">
+                    {{ alert_message }}
+                </h4>
 
-                    </li>
-                </ul>
+                <!--<ul class="fa-ul">-->
+                    <!--<li style="text-align: left" ng-if="alert_message">-->
+
+                      <!--&lt;!&ndash;<span class="title">Title</span>&ndash;&gt;-->
+                        <!--<i class="fa-li fa fa-close" ng-if="alert_type==='failure'"></i>-->
+                        <!--<i class="fa-li fa fa-check" ng-if="alert_type==='success'"></i>-->
+
+                    <!--</li>-->
+                <!--</ul>-->
 
             </form>
 
