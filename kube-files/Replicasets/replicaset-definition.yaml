@@ -4,7 +4,6 @@ metadata:
   name: myapp-replicaset
   labels:
     app: myapp
-    type: front-end
 spec:
   replicas: 3
   selector: 
