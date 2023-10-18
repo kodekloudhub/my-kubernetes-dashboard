@@ -16,6 +16,5 @@ spec:
           env: production
       spec:
         containers:
-         - name: nginx_container
-           image: nginx_image   
-    
+        - name: nginx_container
+          image: nginx_image
