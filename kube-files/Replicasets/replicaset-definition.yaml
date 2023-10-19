@@ -8,13 +8,13 @@ spec:
   replicas: 3
   selector: 
     matchLabels:
-        app: myapp
+        env: production
   template:
-      metadata:
-        name: nginx-1
-        labels:
-          app: myapp
-      spec:
-        containers:
-        - name: nginx_container
-          image: nginx_image
+    metadata:
+      name: nginx-1
+      labels:
+        env: production
+    spec:
+      containers:
+      - name: nginx_container
+        image: nginx_image
