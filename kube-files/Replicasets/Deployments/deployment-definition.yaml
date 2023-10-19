@@ -12,11 +12,12 @@ spec:
         app: myapp
         type: front-end
   template:
-      metadata:
-      
-        labels:
-          app: myapp
-      spec:
-        containers:
-        - name: nginx_container
-          image: nginx_image
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx_container
+        image: nginx_image
